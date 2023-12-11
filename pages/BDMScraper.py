@@ -5,6 +5,7 @@ import plotly.express as px
 
 import requests
 import bs4 as bs
+import json
 
 def scrape_page(search):
     json_data = []
@@ -26,6 +27,8 @@ def scrape_page(search):
 
             json_data.append({'title': title, 'image': image, 'link': link, 'theme': theme, 'date': date})
 
+    with open('./export/' + search + '.json', 'w') as json_file:
+        json.dump(json_data, json_file)
 
     return json_data
 
