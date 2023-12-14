@@ -1,8 +1,6 @@
 import streamlit as st
 import pandas as pd
-import sqlalchemy as db
-
-from Database import DataBase
+from Database import *
 
 database = DataBase('cdiscountDB')
 

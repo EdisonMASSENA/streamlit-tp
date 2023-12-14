@@ -58,6 +58,3 @@ with st.form('Form 1'):
     if st.form_submit_button('Send Form'):
         st.write('Your name : %s'%(name))
         st.write(f'Your age : {age}')
-
-if st.sidebar.button("Bonjour"):
-    st.sidebar.write("Bonjour")
