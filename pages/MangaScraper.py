@@ -12,7 +12,6 @@ def scrap_manga(search):
 
 st.title("Manga Scraper")
 
-col1, col2 = st.columns(2)
 
 with st.form(key='my_form'):
     search = st.text_input("Recherchez un manga")
@@ -22,9 +21,18 @@ with st.form(key='my_form'):
         datas = scrap_manga(search)
         st.write(datas)
 
-        # for data in datas:
-        #     with col1:
-        #         st.image(data['img'])
-        #     with col2:
-        #         st.write(data['title'])
-        #         st.write(data['desc'])
+        img_values = datas['img'].values
+        titles = datas['title'].values
+        col1, col2 = st.columns(2)
+
+        with col1:
+            for img in img_values:
+                st.image(img)
+        with col2:
+            for title in titles:
+                st.write(title) 
+            
+
+
+
+    
