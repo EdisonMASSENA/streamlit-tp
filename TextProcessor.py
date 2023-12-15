@@ -2,11 +2,11 @@ import requests
 import openai
 import bs4
 import requests
-
+import streamlit as st
 
 class TextProcessor:
 
-    def __init__(self, api_key = "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"):
+    def __init__(self, api_key = st.secrets["api-key"]):
         self.api_key = api_key
         openai.api_key = self.api_key
 
